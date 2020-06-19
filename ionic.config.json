@@ -1,0 +1,7 @@
+{
+  "name": "manual-do-gato",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
