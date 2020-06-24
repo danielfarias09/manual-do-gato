@@ -10,6 +10,22 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'linguagem-corporal',
+    loadChildren: () => import('./pages/linguagem-corporal/linguagem-corporal.module').then( m => m.LinguagemCorporalPageModule)
+  },
+  {
+    path: 'miado',
+    loadChildren: () => import('./pages/miado/miado.module').then( m => m.MiadoPageModule)
+  },
+  {
+    path: 'higiene',
+    loadChildren: () => import('./pages/higiene/higiene.module').then( m => m.HigienePageModule)
+  },
+  {
+    path: 'fontes',
+    loadChildren: () => import('./pages/fontes/fontes.module').then( m => m.FontesPageModule)
   }
 ];
 

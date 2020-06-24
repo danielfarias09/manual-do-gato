@@ -1,5 +1,5 @@
 ion-menu-button {
-  color: var(--ion-color-primary);
+  color: var(ion-color-primary-contrast);
 }
 
 #container {
@@ -9,6 +9,8 @@ ion-menu-button {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
 #container strong {
@@ -25,4 +27,9 @@ ion-menu-button {
 
 #container a {
   text-decoration: none;
+}
+
+.imagem{
+  width:40%;
+  margin: 0 auto;
 }

@@ -1,21 +1,25 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Manual do Gato</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="imagem">
+      <ion-img src="../assets/images/logo.webp"></ion-img>
+    </div>
+    <ion-label class="ion-text-wrap">
+      <i>O gato é um ser independente, original, sincero, autoconfiante, belo e com autoestima extrema.
+      Portanto, não precisa vender sua amizade e nem seu amor por um punhado de ração.E por esse motivo é difamado pelos
+      humanos que têm o seu ego ferido por não serem bajulados e superestimados
+      por uma criatura autossuficiente e íntegra.</i>
+      <br>
+      - Autor Desconhecido
+    </ion-label>
   </div>
 </ion-content>

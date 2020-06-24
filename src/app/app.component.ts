@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free/ngx';
 
 @Component({
   selector: 'app-root',
@@ -13,42 +14,37 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
+      title: 'Início',
       url: '/folder/Inbox',
-      icon: 'mail'
+      icon: 'paw'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Linguagem Corporal',
+      url: '/linguagem-corporal',
+      icon: 'paw'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Miado',
+      url: '/miado',
+      icon: 'paw'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Higiene',
+      url: '/higiene',
+      icon: 'paw'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Fontes',
+      url: 'fontes',
+      icon: 'paw'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private admobFree : AdMobFree
   ) {
     this.initializeApp();
   }
@@ -66,4 +62,24 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
+
+  selecionarItem(i){
+    this.selectedIndex = i;
+    this.mostrarInterstitial();
+  }
+    
+    mostrarInterstitial(){
+      let bannerConfig: AdMobFreeInterstitialConfig = {
+        //isTesting: true,
+        id: 'ca-app-pub-7173661742470104/3369740199',
+        autoShow: true
+        };
+        this.admobFree.interstitial.config(bannerConfig);
+    
+        this.admobFree.interstitial.prepare()
+        .then(() => {
+            this.admobFree.interstitial.show()
+        })
+        .catch(e => console.log(e));  
+      } 
 }
